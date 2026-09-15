@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="navbar-inner">
         <button className="navbar-brand" onClick={() => handleClick('home')}>
           <span className="brand-mark">⟡</span>
-          <span className="brand-text">{profile.name.split(' ')[0]}</span>
+          <span className="brand-text">SHAHEEN</span>
           <span className="brand-dot">.</span>
         </button>
 
