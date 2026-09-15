@@ -1,0 +1,67 @@
+.dsa-ticker {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 0;
+  margin: 24px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.dsa-ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  white-space: nowrap;
+  animation: tickerScroll 40s linear infinite;
+  width: max-content;
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.dsa-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.dsa-ticker-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 6px var(--accent-green);
+  flex-shrink: 0;
+}
+
+.dsa-ticker-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.dsa-ticker-fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.dsa-ticker-fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dsa-ticker-track {
+    animation: none;
+  }
+}

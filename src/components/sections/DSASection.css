@@ -1,0 +1,68 @@
+.dsa-arena {
+  position: relative;
+}
+
+.dsa-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.dsa-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+
+.dsa-card:hover {
+  border-color: rgba(74, 222, 128, 0.3);
+  background: rgba(74, 222, 128, 0.04);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 24px rgba(74, 222, 128, 0.08);
+}
+
+.dsa-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.dsa-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.dsa-card-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dsa-card-topic {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.15);
+  color: var(--accent-green);
+}
+
+@media (max-width: 768px) {
+  .dsa-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dsa-cards {
+    grid-template-columns: 1fr;
+  }
+}
